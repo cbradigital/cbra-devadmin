@@ -2,7 +2,7 @@
 function cb_devadmin_menu() {
 	add_menu_page('CBRA', 'CBRA', 'administrator', 'cbra-devadmin', 'cb_devadmin_dashboard', 'dashicons-admin-page', 99);
 }
-add_action('admin_menu', 'cb-devadmin_menu');
+add_action('admin_menu', 'cb_devadmin_menu');
 
 function cb_devadmin_dashboard() {
 	?>
