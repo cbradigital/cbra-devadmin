@@ -38,7 +38,7 @@ function cb_devadmin_dashboard() {
 	<?php
 	// Verzeichnis erstellen
 	if($_POST['cb-mkdir-name']) {
-		$dirname = get_stylesheet_directory_uri() . '/' . $_POST['cb-mkdir-name'];
+		$dirname = get_stylesheet_directory() . '/' . $_POST['cb-mkdir-name'];
 		$success = mkdir($dirname, 0777, true);
 		if($success) {
 			echo 'Das Verzeichnis "' . $dirname . '" wurde erfolgreich erstellt.';
@@ -49,7 +49,7 @@ function cb_devadmin_dashboard() {
 	}
 	// Datei erstellen
 	if($_POST['cb-nf-name']) {
-		$newfile = get_stylesheet_directory_uri() . '/' . $_POST['cb-nf-name'];
+		$newfile = get_stylesheet_directory() . '/' . $_POST['cb-nf-name'];
 		$success = touch($newfile);
 		if($success) {
 			echo 'Datei "' . $newfile . '" wurde erfolgreich generiert.';
@@ -60,8 +60,8 @@ function cb_devadmin_dashboard() {
 	}
 	// Datei umbenennen
 	if($_POST['cb-rn-oldname'] && $_POST['cb-rn-newname']) {
-		$oldname = get_stylesheet_directory_uri() . '/' . $_POST['cb-rn-oldname'];
-		$newname = get_stylesheet_directory_uri() . '/' . $_POST['cb-rn-newname'];
+		$oldname = get_stylesheet_directory() . '/' . $_POST['cb-rn-oldname'];
+		$newname = get_stylesheet_directory() . '/' . $_POST['cb-rn-newname'];
 		$success = rename($oldname, $newname);
 		if($success) {
 			echo 'Die Datei "' . $oldname . '" wurde erfolgreich in "' . $newname . '" umbenannt.';
@@ -72,7 +72,7 @@ function cb_devadmin_dashboard() {
 	}
 	// Datei löschen
 	if($_POST['cb-rm-name']) {
-		$file = get_stylesheet_directory_uri() . '/' . $_POST['cb-rm-name'];
+		$file = get_stylesheet_directory() . '/' . $_POST['cb-rm-name'];
 		$success = unlink($file);
 		if($success) {
 			echo 'Die Datei "' . $file . '" wurde erfolgreich gelöscht.';
