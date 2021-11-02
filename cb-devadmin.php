@@ -1,5 +1,6 @@
 <?php
 function cb_devadmin_menu() {
+	// Testkommentar
 	add_menu_page('CBRA', 'CBRA', 'administrator', 'cbra-devadmin', 'cb_devadmin_dashboard', 'dashicons-admin-page', 99);
 }
 add_action('admin_menu', 'cb_devadmin_menu');
